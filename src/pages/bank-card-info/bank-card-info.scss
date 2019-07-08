@@ -1,0 +1,13 @@
+page-bank-card-info {
+  .content{background: #F9F9F9;}
+  .list{font-size: 1.4rem;}
+  .label{width: 8rem;color: #000!important;font-size: 1.4rem;}
+  .item{padding-left: 0;}
+  *::-moz-placeholder{font-size: 1.2rem;}
+  *::-webkit-input-placeholder{font-size: 1.2rem;}
+  *:-ms-input-placeholder{font-size: 1.2rem;}
+  .item-divider{height: 4rem;background: #F9F9F9;}
+  .telNum{margin-top: 2rem;}
+  .agreeBtn{margin-top: 2rem;}
+  .select-text,.datetime-text{font-size: 1.4rem;}
+}

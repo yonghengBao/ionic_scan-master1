@@ -1,0 +1,12 @@
+page-approval-detail {
+  ul{padding-left: 0;color: #999;font-size: 1.5rem;}
+  ul li{list-style: none;height: 5rem;line-height: 5rem;text-align: end;padding-right: 1rem;}
+  .approvalDetailBox{position: relative;border: 1px solid #ddd;border-bottom: none;}
+  .approvalDetailBox li{border-bottom: 1px solid #ddd;}
+  label{position: absolute;left: .5rem;line-height: 5rem;}
+
+  .btnBox{position: absolute;bottom: 0;width: 100%;}
+  .btnBox button{width: 40%}
+  .agree{margin-left: 10%;}
+
+}

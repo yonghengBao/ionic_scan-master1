@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>提交结果</ion-title>
+    <ion-buttons end>
+      <button ion-button clear *ngIf="toggle==true" (click)="navigate('MyWalletPage')" color="primary">
+        完成
+      </button>
+      <button ion-button clear *ngIf="toggle==false" (click)="navigate('OrderListPage')" color="primary">
+        完成
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="resultBox">
+    <div class="iconBox">
+      <ion-icon name="time" color="primary" class="timeIcon"></ion-icon>
+    </div>
+    <p class="state">等待处理</p>
+    <p class="tips" >{{word}}，等待工作人员处理</p>
+    <p class="tips"> 如有疑问，请联系 400-800-8000</p>
+  </div>
+
+</ion-content>

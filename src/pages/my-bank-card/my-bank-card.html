@@ -1,0 +1,37 @@
+<!--
+  Generated template for the MyBandCardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的银行卡</ion-title>
+    <ion-buttons end>
+      <button ion-button clear color="primary" (click)="navigate('AddBankCardPage',{type:0})">
+        <ion-icon name="add" class="addBtn"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let card of cardList">
+    <ion-card-header>
+      <div class="title1">
+        <i class="bankIcon" *ngIf="card.icon==='1'"><img src="assets/icon/bank1.png"></i>
+        <i class="bankIcon" *ngIf="card.icon==='2'"><img src="assets/icon/bank2.png"></i>
+        <i class="bankIcon" *ngIf="card.icon==='3'"><img src="assets/icon/bank3.png"></i>
+        <p class="cardName">{{card.name}}<span class="tag">{{tag}}</span></p>
+        <p class="cardType">{{card.type}}</p>
+      </div>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="cardNum">{{card.number}}</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

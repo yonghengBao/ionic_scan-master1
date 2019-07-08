@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RechargeResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>充值结果</ion-title>
+    <ion-buttons end *ngIf="state==='1'">
+    <button ion-button clear (click)="navigate('MyWalletPage')" color="primary">
+      完成
+    </button>
+  </ion-buttons>
+    <ion-buttons end *ngIf="state==='2'">
+      <button ion-button clear (click)="navigate('RechargePage')" color="primary">
+        返回
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="box" *ngIf="state==='1'">
+    <div class="iconBox">
+      <ion-icon name="checkmark-circle" color="primary" class="stateIcon"></ion-icon>
+    </div>
+    <p class="state">充值成功</p>
+    <p class="tips">预计1小时内到账，请关注账户余额</p>
+    <p class="tips">若有疑问请联系 400-800-8000</p>
+  </div>
+  <div class="box" *ngIf="state==='2'">
+    <div class="iconBox">
+      <ion-icon name="close-circle" color="danger" class="stateIcon"></ion-icon>
+    </div>
+    <p class="state">支付失败</p>
+    <p class="tips">所选银行卡余额不足</p>
+
+  </div>
+
+</ion-content>

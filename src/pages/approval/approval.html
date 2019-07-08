@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ApprovalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>用餐申请审批</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <button ion-item *ngFor="let p of items" (click)="navigate('ApprovalDetailPage',p.id)">
+      <div class="left">
+        <p class="name">{{p.type}}<span class="tips" [ngClass]="[p.tips==='1'? 'pass': '', p.tips==='2'? 'return': '',p.tips==='0'? 'wait': '']">{{p.tips==0?"New":p.tips==1?"已同意":"已退回"}}</span></p>
+        <p class="approver">申请人：{{p.name}}</p>
+      </div>
+      <div class="right">
+        <p class="date">{{this.base.DateFormatter(p.date)}}</p>
+      </div>
+    </button>
+    <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="infiniteShow">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <no-data *ngIf="noData"></no-data>
+</ion-content>

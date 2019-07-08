@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>往日订单</ion-title>
+  </ion-navbar>
+
+  <div>
+    <!--日期选择-->
+    <div class="choice">
+      <button ion-button outline small class="chooseBtn" (click)="chooseMonth=!chooseMonth">{{chooseMonth?"按月选择":"按日选择"}}</button>
+      <div class="timeBox">
+        <div class="chooseByMonth" [hidden]="!chooseMonth">
+          <ion-datetime displayFormat="YYYY-MM" placeholder="{{chooseDate}}" [(ngModel)]="chooseDate" (ngModelChange)="getChooseDate()" cancelText="取消" doneText="确定"></ion-datetime>
+        </div>
+        <ion-list no-lines class="chooseByDay" [hidden]="chooseMonth">
+          <ion-item class="timeItem">
+            <ion-datetime class="startTime" displayFormat="YYYY-MM-DD" placeholder="{{startTime}}" [(ngModel)]="startTime" (ngModelChange)="getStartTime()" cancelText="取消" doneText="确定"></ion-datetime>
+          </ion-item>
+          <span class="span">至</span>
+          <ion-item class="timeItem">
+            <ion-datetime class="endTime" displayFormat="YYYY-MM-DD" placeholder="{{endTime}}" [(ngModel)]="endTime" (ngModelChange)="getEndTime()" cancelText="取消" doneText="确定"></ion-datetime>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <!--tab菜单-->
+    <div class="tab-menus">
+      <ul>
+        <li *ngFor="let menu of menus;let i = index" (click)="onTabsChange(i)" [ngClass]="{active:i===tabIndex}">
+          <p>{{menu}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</ion-header>
+
+<ion-content>
+
+  <!--下拉刷新-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <!--全部-->
+  <order-history-all *ngIf="status==1" class="com" #ref></order-history-all>
+  <!--已结算-->
+  <order-history-settled *ngIf="status==2" class="com" #ref></order-history-settled>
+  <!--未结算-->
+  <order-history-unsettled *ngIf="status==3" class="com" #ref></order-history-unsettled>
+
+  <!--上拉加载更多-->
+  <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  <ion-infinite-scroll *ngIf="getMore" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

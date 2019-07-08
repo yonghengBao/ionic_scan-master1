@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>餐券详情</ion-title>
+    <ion-buttons end *ngIf="ticketType==1">
+      <button ion-button class="header-right">
+        赠送
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="con">
+    <div class="card">
+      <div class="card-head">
+        <span class="card-icon"></span>
+      </div>
+      <ul class="ticket">
+        <li>
+          <span class="type">{{ticketForm.type}}</span>
+        </li>
+        <li>
+          <p>{{ticketForm.name}}</p>
+        </li>
+        <li class="date">
+          <span>有效期</span>
+          <p>{{ticketForm.date}}</p>
+        </li>
+        <li class="dec">
+          <p>{{useRange}}</p>
+        </li>
+      </ul>
+      <button [ngClass]="{okBtn:ticketType==1}" (click)="goScan()">{{ticketType==1?"立即使用":ticketType==2?"已使用":"已过期"}}</button>
+    </div>
+  </div>
+</ion-content>

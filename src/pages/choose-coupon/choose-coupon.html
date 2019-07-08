@@ -1,0 +1,26 @@
+<!--
+  Generated template for the ChooseCouponPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>选择餐券</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list radio-group>
+    <ion-item no-lines  *ngFor="let coupon of couponList;let couponIndex = index" class="cardList">
+      <ion-label>
+        <p class="couponType">{{coupon.type}}<span class="couponTime">{{coupon.time}}</span></p>
+        <p class="couponTips">{{coupon.tips}}</p>
+      </ion-label>
+      <ion-radio selected  (click)="chooseFun(couponIndex)"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

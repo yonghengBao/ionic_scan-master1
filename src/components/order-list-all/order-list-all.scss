@@ -1,0 +1,13 @@
+//订单--全部/已完成/退款    公用样式
+order-list-all,order-list-refund,order-list-finished{
+    .scroll-content{padding: 0!important;}
+    .item{color: #666;padding: 0rem 0 0rem 0;border-bottom: 1px solid #ddd!important;}
+    .item p{font-size:1.3rem;line-height:2.2rem !important;}
+    .left{float: left;padding-left: 1.5rem;}
+    .right{float: right;}
+    .img-con{width:4.1rem;height:4.1rem;background:#e0e0e0;display:block;float:left;margin-right:.8rem;}
+    .state,.time{color: #999;}
+    .name{color:#000;}
+    .money{color:#666;margin-top:.3rem;}
+    .item .money,.item .time{line-height:1.8rem !important;}
+}

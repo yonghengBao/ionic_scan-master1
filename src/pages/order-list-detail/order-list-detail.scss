@@ -1,0 +1,20 @@
+page-order-list-detail {
+  .mybg{background:#F9F9F9;}
+  .header{background:#fff}
+  .sller{height:4rem;margin:0 auto;padding-top:1.5rem;text-align:center}
+  .header p{text-align:center;line-height:3rem;}
+  .img-con{width:2rem;height:2rem;background:#1abc9c;display:block;float:left;border-radius:2rem;margin-left:35%;margin-right:.6rem;}
+  .myimg{width:2rem;height:2rem;display:block;border-radius:2rem;}
+  .realPay{font-weight:bolder;font-size:1.9rem;}
+  .mytitle,.status,.des{color:#999}
+  .myvalue{text-align: right;}
+  .grid{padding:0;}
+  .col{padding:5px 10px}
+  .mygrid p{line-height:3rem;}
+  .mygrid .row{border-bottom:1px solid #E8E8E8;background:#fff;}
+  .list{margin-top:1rem;}
+  .item{padding-left:10px;border-top:1px solid #E4E4E4;border-bottom:1px solid #E4E4E4;}
+  .item p{color:#999;float:left;}
+  .red{;padding:.15rem .15rem;background:#F96268;display:inline-block;font-size:.7rem;border-radius:10px;color:#fff;margin-left:.2rem;}
+  .des{line-height:2rem;font-size:.9rem;padding:0 10px;text-align:justify;}
+}

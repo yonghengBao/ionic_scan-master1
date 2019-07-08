@@ -1,0 +1,43 @@
+<!--
+  Generated template for the ApprovalDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>审批详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ul class="approvalDetailBox" *ngFor="let item of items">
+    <li>
+      <label>用餐日期</label>{{item.date}}
+    </li>
+    <li>
+      <label>用餐时段</label>{{item.time}}
+    </li>
+    <li>
+      <label>餐券类型</label>{{item.type}}
+    </li>
+    <ul *ngFor="let userItem of userList">
+      <li>
+        <label>公司名称</label>{{userItem.company}}
+      </li>
+      <li>
+        <label>真实姓名</label>{{userItem.userName}}
+      </li>
+    </ul>
+  </ul>
+
+ <div class="btnBox">
+   <button ion-button class="return" outline (click)="showPrompt()">退回</button>
+   <button ion-button class="agree" (click)="agreeFun()">同意</button>
+ </div>
+
+
+</ion-content>

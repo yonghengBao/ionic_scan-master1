@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>更改绑定手机号</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<div class="question" [hidden]="question">-->
+    <!--<p class="note">原手机号能否接收短信？</p>-->
+    <!--<div class="choice">-->
+      <!--<button ion-button class="yes" (click)="canFun()">能</button>-->
+      <!--<button ion-button outline class="no" (click)="cannotFun()">不能</button>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--能接收短信-->
+  <div class="can" [hidden]="can">
+    <ion-list>
+      <p class="note">验证码已发送到原绑定手机号</p>
+      <ion-item no-lines>
+        <ion-label class="codeLabel">
+          验证码
+        </ion-label>
+        <ion-input class="text-input" type="tel" placeholder="输入验证码" clearInput [(ngModel)]="canCode"></ion-input>
+        <button ion-button item-end clear (click)="resendCode()" [disabled]="resend.disabled">{{resend.tips}}</button>
+      </ion-item>
+    </ion-list>
+    <button ion-button full round (click)="canNextFun()" class="btn">下一步</button>
+  </div>
+
+  <!--不能接收短信-->
+  <!--<div class="cannot" [hidden]="cannot">-->
+    <!--<p class="note">请核对身份信息</p>-->
+    <!--<ion-list inset>-->
+      <!--<ion-item>-->
+        <!--<ion-label class="codeLabel">姓名</ion-label>-->
+        <!--<ion-input class="text-input" clearInput placeholder="请输入姓名"></ion-input>-->
+      <!--</ion-item>-->
+      <!--<ion-item>-->
+        <!--<ion-label class="codeLabel">身份证号</ion-label>-->
+        <!--<ion-input class="text-input" type="tel" clearInput placeholder="请输入身份证号"></ion-input>-->
+      <!--</ion-item>-->
+    <!--</ion-list>-->
+    <!--<button ion-button full round  (click)="cannotNextFun()" class="btn">下一步</button>-->
+  <!--</div>-->
+
+  <!--绑定新手机号-->
+  <div class="newTel" [hidden]="newTel">
+    <p class="note">绑定新手机号</p>
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="phone-portrait" color="gray"></ion-icon>
+        </ion-label>
+        <ion-input class="text-input" type="tel" [(ngModel)]="params.tel" placeholder="输入手机号码" clearInput (ngModelChange)="handleChange($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <ion-icon name="text" color="gray"></ion-icon>
+        </ion-label>
+        <ion-input class="text-input" type="tel" placeholder="手机验证码" clearInput [(ngModel)]="newTelCode"></ion-input>
+        <button ion-button clear item-end (click)="getCode()" [disabled]="get.disabled">{{get.tips}}</button>
+      </ion-item>
+    </ion-list>
+    <button ion-button full round (click)="newTelNext()" class="btn">下一步</button>
+  </div>
+
+  <!--修改绑定手机号成功-->
+  <div class="success" [hidden]="success">
+    <p class="note">修改绑定手机号成功！</p>
+    <button ion-button full round (click)="goLoginPage()" class="btn">完成</button>
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>余额变动明细</ion-title>
+  </ion-navbar>
+  <!--tab菜单-->
+  <div class="tab-menus">
+    <ul>
+      <li *ngFor="let menu of menus;let i = index" (click)="onTabsChange(i)" [ngClass]="{active:i===tabIndex}">
+        <p>{{menu}}</p>
+      </li>
+    </ul>
+  </div>
+</ion-header>
+
+<ion-content class="myCon">
+  <!--下拉刷新-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--全部-->
+  <trade-detail-all *ngIf="type==0" class="com" #ref></trade-detail-all>
+  <!--收入-->
+  <trade-detail-income *ngIf="type==1" class="com" #ref></trade-detail-income>
+  <!--支出-->
+  <trade-detail-cost *ngIf="type==2" class="com" #ref></trade-detail-cost>
+
+  <!--上拉加载更多-->
+  <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  <ion-infinite-scroll *ngIf="getMore" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

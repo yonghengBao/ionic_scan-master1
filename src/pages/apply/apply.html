@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>用餐申请</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="navigate('ApprovalPage')" color="primary">
+        审批
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list no-lines>
+    <button ion-item *ngFor="let item of items" (click)="navigate('ApplyDetailPage',item.id)">
+      <div class="left">
+        <p class="name">{{item.name}}<span class="tips" [ngClass]="[item.tips==='1'? 'pass': '', item.tips==='2'? 'return': '',item.tips==='0'? 'wait': '']">{{item.tips==0?"等待审批":item.tips==1?"已同意":"已退回"}}</span></p>
+        <p class="approver">审批人：{{item.approver}}</p>
+      </div>
+      <div class="right">
+        <p class="date">{{item.date | date : 'yyyy-MM-dd HH:mm:ss'}}</p>
+      </div>
+    </button>
+    <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="infiniteShow">
+    <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <no-data *ngIf="noData"></no-data>
+</ion-content>
+<ion-footer>
+  <button ion-button round class="addApplyBtn" (click)="navigate('AddApplyPage')">新增申请</button>
+</ion-footer>

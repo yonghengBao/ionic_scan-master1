@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>付款给商家</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="sellerImg">
+    <img src="assets/ticket.png">
+  </div>
+  <p class="sellerName">{{merchantName}}</p>
+  <div class="way">
+    <ion-list class="moneyInput">
+      <span class="moneyIcon">￥</span>
+      <ion-item>
+        <ion-label stacked class="moneyLabel">付款金额</ion-label>
+        <ion-input class="payMoney" type="tel" [(ngModel)]="orderAmount"></ion-input>
+      </ion-item>
+    </ion-list>
+    <!--<button ion-item no-lines class="ticket"  (click)="navigate('ChooseCouponPage')">-->
+      <!--<span class="icons"><img src="../assets/icon/ticket.png"></span>-->
+      <!--餐券-->
+      <!--<span class="price">{{money}}</span>-->
+    <!--</button>-->
+    <ion-item class="ticket">
+      <ion-label><span class="icons"><img src="assets/icon/ticket.png"></span>餐券</ion-label>
+      <ion-select [placeholder]="placeholderName" interface="action-sheet"  [(ngModel)]="voucherId" (ngModelChange)="choseTicket()" okText="确定" cancelText="取消">
+        <ion-option *ngFor="let ticket of couponList" value="{{ticket.id}}">{{ticket.tips}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <p class="wayT">选择支付方式</p>
+    <ion-list radio-group>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/balance.png"></span>余额</ion-label>
+        <ion-radio selected></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/wechat.png"></span>微信支付</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/alipay.png"></span>支付宝</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/bankCard.png"></span>银行卡</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
+
+<ion-footer class="footerBox">
+  <div class="bottomBox">
+    <p class="totalMoney">合计：￥{{orderAmount}}</p>
+    <button ion-button class="payBtn" (click)="sureBtn()">确认支付</button>
+  </div>
+</ion-footer>

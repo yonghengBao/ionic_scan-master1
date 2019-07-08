@@ -1,0 +1,29 @@
+page-recharge {
+  .rechargeMoney{width: 100%;overflow: hidden;}
+  .label{font-size: 1.5rem;}
+  .icons{display: inline-block;margin-right: .5rem;}
+  .icons img{width: 2rem;height: 2rem;vertical-align: middle;}
+  .moneyBtn{overflow: hidden;}
+  .moneyBtn >.button{width: 30%;height: 5rem;float: left;padding: 0!important;margin: .5rem 1.65%!important;}
+  .custom{width: 100%;height: 4rem;}
+  .moneyInput{width: 96.7%;height: 3rem!important;padding: 0!important;margin: .5rem 1.65%!important;}
+  .textInput{width: 100%;height: 3rem;padding: 0!important;margin: .5rem 0!important;border-top: 1px solid #ddd!important;border-bottom: 1px solid #ddd!important;}
+  .text-input{margin: 0;line-height: 3rem;text-align: center;padding: 0!important;}
+  .rechargeBtn{position: absolute;bottom: 0;width: 90%;left: 5%;}
+  .item{padding-left: 0!important;}
+  //弹出窗
+  .popBox{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background: rgba(128,128,128,.5);}
+  .popBody{width: 100%;height: 70%;position: absolute;left: 0;bottom: 0;background: #FAFAFA;}
+  .popT{text-align: center;height: 4.4rem;font-size: 2rem;line-height: 4.4rem;}
+  .closeBtn{font-size: 3rem;position: absolute;left: 1rem;top: .5rem;}
+  .info .label{text-align: end!important;}
+  .info span{float: left;margin-left: 1rem;}
+  .payBtn{position: absolute;left: 5%;bottom: 0;width: 90%;}
+  //选择付款方式
+  .bankIcon{width: 2rem;height: 2rem;display: inline-block;position: absolute;left: 1rem;top: 1.2rem;}
+  .bankIcon img{width: 100%;height: 100%;}
+  .cardName{font-weight: bold;font-size: 1.5rem;padding-left: 4rem;color: #000;}
+  .cardType{color: #999;padding-left: 4rem;}
+  //选择入账单位
+  .companyName{padding-left: 2rem;font-size: 1.6rem;color: #000;}
+}

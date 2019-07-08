@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>提现记录</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list no-lines>
+    <ion-item class="cashList" *ngFor="let cash of cashList">
+      <i class="recordL" *ngIf="cash.accountType===1"><img src="assets/icon/balance1.png"></i>
+      <i class="recordL" *ngIf="cash.accountType===2"><img src="assets/icon/salary.png"></i>
+      <div class="recordC">
+        <p class="info">{{cash.accountType==1?"余额":"工资"}}提现到{{cash.extractBank}}</p>
+        <p class="time">{{cash.applyDate}}</p>
+      </div>
+      <div class="recordR">
+        <p [ngClass]="[cash.extractStatus==6?'success':cash.extractStatus==7?'fail':'wait']">{{status}}</p>
+        <p class="money">{{cash.extractAmount}}</p>
+      </div>
+    </ion-item>
+    <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="infiniteShow">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <no-data *ngIf="noData"></no-data>
+
+</ion-content>

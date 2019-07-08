@@ -1,0 +1,21 @@
+<div class="coupon-content">
+  <ion-list no-lines>
+    <ion-item *ngFor="let order of allOrderList" (click)="goDetail(order.id)" >
+      <div class="left">
+        <p class="name">{{order.name}}</p>
+        <span class="img-con">
+          <img src="" alt="">
+        </span>
+        <p class="money">实付款：{{order.money}}元</p>
+        <p class="time">付款时间：{{order.time}}</p>
+      </div>
+      <div class="right">
+        <p class="state" *ngIf="order.status=='7'">退款中</p>
+        <p class="state" *ngIf="order.status=='8'">退款成功</p>
+        <p class="state" *ngIf="order.status=='9'">退款失败</p>
+        <p class="state" *ngIf="order.status=='10'">交易成功</p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <no-data *ngIf="noData"></no-data>
+</div>

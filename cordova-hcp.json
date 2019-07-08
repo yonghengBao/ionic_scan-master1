@@ -1,0 +1,8 @@
+{
+  "name": "myapptest",
+  "ios_identifier": "io.ionic.HopeStart",
+  "android_identifier": "io.ionic.HopeStart",
+  "update": "now",
+  "content_url": "http://gt.wq.com/www/",
+  "min_native_interface": 1
+}

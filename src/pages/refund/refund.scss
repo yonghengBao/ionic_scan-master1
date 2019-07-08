@@ -1,0 +1,23 @@
+page-refund {
+  .mybg{background:#F9F9F9;}
+  .item{font-size:1.4rem;}
+  textarea{height:5rem;color:#666;}
+  .label{color:#333 !important;margin-right:1rem;}
+  .myinput{color:#333}
+  .myitem{margin:13px .8rem 0 0;}
+  .label .des{color:#CCC !important;font-size:1rem;margin-left:.5rem;}
+  .input-con{width:8rem;height:8rem;border:1px solid #D7DDE4;position:relative;text-align:center;}
+  .img-con{width:8rem !important;height:8rem !important;display:block;float:left;margin-right:.3rem;}
+  .input-con p{color:#ccc;}
+  .imgInput{width:8rem;height:8em;-webkit-box-flex:0;-webkit-flex:0;flex:0;position:absolute;left:0;top:0;z-index:11;opacity:0}
+  .imgInput .text-input{margin:0;padding:0;width:8rem;height:8rem;}
+  .list .des-item .item-inner{border-bottom:none !important;}
+  .applyBtn{width:90%;position:absolute;bottom:0;left:5%;}
+  .input-item{padding-bottom:1.5rem;}
+  .input-item ion-label{pointer-events:auto !important;}
+  .addIcon{font-size:3rem;margin-top:1.5rem;color:#ccc;font-weight:bolder;}
+  .input-item .label{margin-right:0}
+  //item点击后的样式
+  .item.item-input.item-input-has-focus .item-inner,.item.item-input.input-has-focus .item-inner{border-bottom-color:#dedede;box-shadow: inset 0 0 0 0 #dedede;}
+}
+

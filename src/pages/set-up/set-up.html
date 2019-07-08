@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <button ion-item (click)="goChangeTelPage()">
+      <ion-label>
+        <span class="icons">
+          <img src="assets/icon/tel.png" >
+        </span>
+        更改绑定手机号
+      </ion-label>
+    </button>
+    <button ion-item (click)="navigate('SetPasswordPage')">
+      <ion-label>
+        <span class="icons">
+          <img src="assets/icon/setUp.png" >
+        </span>
+        修改密码
+      </ion-label>
+    </button>
+    <ion-item>
+      <ion-label>
+        <span class="icons">
+          <img src="assets/icon/air.png" >
+        </span>
+        内容推送
+      </ion-label>
+      <ion-toggle class="on-off"></ion-toggle>
+    </ion-item>
+    <button ion-item (click)="navigate('SuggestionPage')">
+      <ion-label>
+        <span class="icons">
+          <img src="assets/icon/email.png" >
+        </span>
+        意见反馈
+      </ion-label>
+    </button>
+  </ion-list>
+
+</ion-content>

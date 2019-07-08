@@ -1,0 +1,140 @@
+page-home{
+  $toggle-ios-width:10px;
+  .user{
+    text-align: center;
+  }
+  .user img{
+    margin: 1rem 0;
+    height: 5rem;
+  }
+  .ion-mItem{
+    font-size: 1.6rem;
+    min-height: .5rem;
+    height: 3.4rem;
+    line-height: 3.4rem;
+    padding-left: .5rem;
+    color: #333;
+    margin: 1rem 0;
+
+
+  }
+  .label{
+    margin: 0;
+  }
+  .ion-mIcon{
+    font-size: 20px;
+    vertical-align: middle;
+    width: 3rem;
+    text-align: center;
+    color: #ff5d3d;
+  }
+  //用餐说明
+  .eat-descripte{
+    color: #999999;
+    padding-left:1rem;
+    position: absolute;
+    bottom: 5rem;
+    font-size: 1.4rem;
+  }
+  .eat-descripte h3{
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin: 0 0 .3rem;
+  }
+  .eat-descripte li{
+    margin-left: .6rem;
+    line-height: 2rem;
+  }
+  // 退出登录
+  .quit{
+    width: 100%;
+    color: #999999;
+    padding-left:1rem;
+    position: absolute;
+    bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .quit div{
+    display: inline-block;
+  }
+  .quit .ion-color{
+    color: #ff5d3d;
+  }
+  .quit .logout{
+    float: right;
+    margin-right: 1.5rem;
+  }
+
+  .tab-menus{
+    background:#1abc9c;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+  .tab-menus ul{
+    margin: 0;
+    height: 8.75rem;
+    padding: 0 2.5rem;
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+    -moz-box-pack:space-between;
+    -webkit--moz-box-pack:space-between;
+    box-pack:center;
+    align-items:center;
+    -webkit-align-items:center;
+    box-align:center;
+    -moz-box-align:center;
+    -webkit-box-align:center;
+  }
+  .tab-menus ul li{
+    text-align: center;
+  }
+  .tab-menus img{
+    width: 3.4rem;
+  }
+  .tab-menus p{
+    margin-top: .5rem;
+  }
+  //最新动态、用餐历史
+  .new-status{
+    padding: 0 .5rem;
+  }
+  .new-status>p{
+    padding:.7rem .5rem 0;
+    height: 3.4rem;
+    color: #000;
+    line-height: 2rem;
+    border-bottom: 1px solid #ddd;
+  }
+  .new-status p i{
+    display: inline-block;
+    width: 7px;
+    height: 16px;
+    background: #1abc9c;
+    position: relative;
+    top:3px;
+  }
+  .new-status ul{
+    padding: .3rem .5rem;
+    //font-size: .7rem;
+    color: #333;
+  }
+  .new-status ul li{margin-bottom: .2rem}
+  .new-status ul li p .createTime{
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: 1rem;
+  }
+
+  .new-status ul li p.detail{
+    padding: 0 0 .3rem .3rem;
+    font-size: 1.3rem;
+  }
+
+  .finish{text-align: center;}
+
+}
+

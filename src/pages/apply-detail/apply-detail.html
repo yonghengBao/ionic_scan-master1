@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ApplyDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>申请详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ul class="applyDetailBox" *ngFor="let item of items">
+    <li>
+      <label>用餐日期</label>{{item.date}}
+    </li>
+    <li>
+      <label>用餐时段</label>{{item.time}}
+    </li>
+    <li>
+      <label>餐券类型</label>{{item.type}}
+    </li>
+    <ul *ngFor="let userItem of userList">
+      <li>
+        <label>公司名称</label>{{userItem.company}}
+      </li>
+      <li>
+        <label>真实姓名</label>{{userItem.userName}}
+      </li>
+    </ul>
+    <!--<span class="tips" [ngClass]="[item.tips==='1'? 'pass': '', item.tips==='2'? 'return': '',item.tips==='0'? 'wait': '']">{{item.tips==0?"等待审批":item.tips==1?"已同意":"已退回"}}</span>-->
+    <!--<span class="state pass">  -->
+    <span class="state" [ngClass]="[item.state==='1'? 'pass': '', item.state==='2'? 'return': '',item.state==='0'? 'wait': '']">
+        {{item.state==0?"等待审批":item.state==1?"已同意":"已退回"}}
+      </span>
+  </ul>
+
+</ion-content>

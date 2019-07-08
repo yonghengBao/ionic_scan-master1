@@ -1,0 +1,10 @@
+order-history-all,order-history-settled,order-history-unsettled{
+  .scroll-content{padding: 0!important;}
+  .item{color: #666;padding: .5rem 0;border-bottom: 1px solid #ddd!important;}
+  .left{float: left;padding-left: 1.5rem;}
+  .right{float: right;}
+  .time,.state{color: #999;}
+  .settled{color: #1ABC9C;}
+  .unsettled{color: #FF0000;}
+  .list{margin:2px 0 16px;}
+}

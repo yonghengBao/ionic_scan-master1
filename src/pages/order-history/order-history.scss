@@ -1,0 +1,21 @@
+page-order-history ,page-com-order-list,page-com-coupon,page-com-trade-detail{
+  .content{background:#F9F9F9}
+  .scroll-content{padding: 0!important;}
+  .choice{margin: 0;height: 4.4rem!important;position: relative;}
+  .chooseBtn{margin: 0!important;position: absolute;left: 2rem;top: 1.0625rem; z-index: 999;}
+  .timeBox{width: 70%;height: 4.4rem;position: absolute;right: .5rem;}
+  .chooseByMonth{text-align: end;margin-top: 0.415rem;}
+  .chooseByDay{text-align: center;}
+  .timeItem{width: 45%;float: left;font-size: 1.4rem!important;background: #F8F8F8;}
+  .startTime,.endTime{padding: 0!important;}
+  .span{width: 10%;float: left;line-height: 4.4rem;}
+  .datetime-placeholder{color: #000!important;}
+  .tab-menus ul{margin:0;height: 4rem; }
+  .tab-menus ul li{width:33%;height:4.3rem;text-align: center;float:left;line-height:4.3rem;}
+  .tab-menus ul li p{line-height:4.3rem;}
+  .def{ border-bottom: 1px solid #e0e0e0; }
+  .active{ border-bottom: 2px solid #1ABC9C;color:#1abc9c}
+  .com .scroll-content{margin-top:0rem;border-top:none;}
+  .tab-menus{width:100%;height:4rem;background:#fff;color: #999;font-size: 1.4rem;line-height:4rem;}
+  .finish{text-align: center;line-height:4rem;}
+}

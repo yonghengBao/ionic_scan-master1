@@ -1,0 +1,16 @@
+page-cash-record {
+  .date{height: 4.4rem;line-height: 4.4rem;border-bottom: 1px solid #ddd!important;font-size: 1.5rem;text-indent: 1rem;}
+  .datetime-text{line-height: 2.5rem;color: #000!important;}
+  .cashList{border-bottom: 1px solid #ddd!important;padding: 1rem 0;}
+  .recordL{width: 2.5rem;height: 2.5rem;display: inline-block;float: left;margin: .5rem 1rem;}
+  .recordL img{width: 2.5rem;height: 2.5rem;}
+  .recordC{width: 65%;float: left;}
+  .info{font-size: 1.5rem;margin-bottom: .4rem;color: #666;}
+  .time{color: #999;}
+  .recordR{width: 19%;float: left;}
+  .success{color: #1ABC9C;}
+  .wait{color: #3399FF;}
+  .fail{color: #FF0000;}
+  .money{font-weight: bold;color: #000;font-size: 1.5rem;margin-top: .5rem;}
+  .finish{text-align: center;}
+}

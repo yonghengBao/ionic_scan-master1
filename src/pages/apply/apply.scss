@@ -1,0 +1,16 @@
+page-apply {
+  .scroll-content{margin-bottom: 4rem;}
+  .item{padding: 1rem 0;padding-left: 0;}
+  .label{margin-bottom: 0;}
+  .left,.right{float: left;width: 50%;height: 3.8rem;}
+  .left >p{height: 2rem;line-height: 2rem;}
+  .right{line-height: 3rem;font-size: 1.2rem;color: #999;}
+  .name{font-size: 1.6rem;color: #000;}
+  .tips{font-size: 1.4rem;display: inline-block;padding-left: .5rem;vertical-align: middle;}
+  .date{text-indent: 0;line-height: 3.8rem;}
+  .pass{color: #1ABC9C;}
+  .return{color: #FF0000;}
+  .wait{color: #3399FF;}
+  .addApplyBtn{width: 90%;left: 5%;}
+  .finish{text-align: center;}
+}

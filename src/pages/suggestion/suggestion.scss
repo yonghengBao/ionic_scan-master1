@@ -1,0 +1,10 @@
+page-suggestion {
+  .item-block:first-child{border-top: 0!important;}
+  .sug-con{border: 1px solid #ddd;width:100%;height:13.5rem;margin: 0 auto;position:relative;}
+  textarea{height:11rem;font-size:1.4rem;margin-left: .5rem!important;}
+  .item{padding-left:0 !important;height:13.5rem;}
+  .item-inner{padding-right:0 !important;}
+  .sugBtn{margin-top:3rem;}
+  .sugNum{position:absolute;right:2rem;bottom:1rem;font-size:.6rem;z-index:3;color:#B0B0B0}
+  .toast-wrapper{width:29% !important;max-width:200px !important;}
+}

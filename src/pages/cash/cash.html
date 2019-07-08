@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>提现</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="navigate('CashRecordPage')" color="primary">
+        提现记录
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="bankChoice">
+    <button ion-item (click)="navigate('ChooseBankCardPage')">
+      <i class="bankIcon" *ngIf="extractIcon==='1'"><img src="assets/icon/bank1.png"></i>
+      <i class="bankIcon" *ngIf="extractIcon==='2'"><img src="assets/icon/bank2.png"></i>
+      <i class="bankIcon" *ngIf="extractIcon==='3'"><img src="assets/icon/bank3.png"></i>
+      <p class="cardName">{{extractBank}}</p>
+      <p class="cardTips">{{extractCardnum}}</p>
+    </button>
+  </ion-list>
+  <!--余额-->
+  <ion-list no-lines class="box">
+    <p class="cashMoney">提现金额</p>
+    <ion-item>
+      <ion-checkbox item-start [(ngModel)]="checkedBal"  (ionChange)="getMoney()"></ion-checkbox>
+      <ion-label class="name">余额<span class="hint">可提现余额{{balanceAccount}}元</span></ion-label>
+      <button ion-button item-end clear (click)="balAll()">全部提现</button>
+    </ion-item>
+    <ion-item>
+      <ion-label class="money-label">￥</ion-label>
+      <ion-input class="money-input" placeholder="请输入提现金额" [(ngModel)]="balance" (ionChange)="getMoney()" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="remark">备注信息</ion-label>
+      <ion-input class="remark" placeholder="如'余额'" [(ngModel)]="remarkBal" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <!--工资-->
+  <ion-list no-lines class="box">
+    <ion-item>
+      <ion-checkbox item-start [(ngModel)]="checkedSal"  (ionChange)="getMoney()"></ion-checkbox>
+      <ion-label class="name">工资<span class="hint">可提现余额{{salaryAccount}}元</span></ion-label>
+      <button ion-button item-end clear (click)="salAll()">全部提现</button>
+    </ion-item>
+    <ion-item>
+      <ion-label class="money-label">￥</ion-label>
+      <ion-input class="money-input" placeholder="请输入提现金额" [(ngModel)]="salary" (ionChange)="getMoney()" clearInput></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="remark">备注信息</ion-label>
+      <ion-input class="remark" placeholder="如'工资'" [(ngModel)]="remarkSal" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="footerBox">
+  <div class="bottomBox">
+    <p class="totalMoney">合计：￥{{allMoney}}</p>
+    <button ion-button class="cashBtn" (click)="confirmCash()">确认提现</button>
+  </div>
+</ion-footer>

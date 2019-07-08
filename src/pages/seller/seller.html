@@ -1,0 +1,43 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我是商家</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="navigate('OrderHistoryPage')" color="primary">
+        往日订单
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div>
+    <p class="sellerT">今日收入</p>
+    <h1 class="income"><span>￥</span>{{money}}</h1>
+    <p class="news"><i></i>最新动态</p>
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let p of items;">
+        <p><span class="time">{{this.base.DateFormatter(p.time)}}</span>用户{{p.name}}支付￥{{p.amount}}</p>
+      </li>
+      <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+    </ul>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="infiniteShow">
+      <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+
+</ion-content>

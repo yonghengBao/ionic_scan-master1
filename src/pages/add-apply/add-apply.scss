@@ -1,0 +1,14 @@
+page-add-apply {
+  .scroll-content{margin-bottom: 3rem;}
+  .applyForm{border: 1px solid #ddd;margin:0!important;}
+  .item-inner{border-bottom: none;}
+  .add{float: right;padding: 0;}
+  ion-list{margin-top: 0!important;margin-bottom: 0!important;}
+  .info{border-top: 1px solid #ddd;margin: 0!important;text-indent: 1.33rem;border-right: 1px solid #ddd;position: relative;}
+  .remove{position: absolute;right: .5rem;top: 50%;font-size: 3rem;margin-top: -1.5rem;}
+  .timeBox{color: #999!important;}
+  .item{padding-left: 0;text-indent: 1.33rem;color: #999;}
+  .item-checkbox{padding-left: 1.33rem;}
+  .datetime-text,.select-text{overflow: visible;font-size: 1.5rem;}
+  .submitBtn{width: 90%;left: 5%;}
+}

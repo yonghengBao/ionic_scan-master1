@@ -1,0 +1,49 @@
+un-coupon,had-coupon,past-coupon{
+  //已使用，未使用，已过期页面公用样式
+
+    .coupon-content{
+      background: #f8f8f8;
+    }
+    .item{
+      margin-bottom: .84rem;
+      border: 1px solid #ddd;
+      padding: 0 .84rem;
+      display:-webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      align-items:center;
+      -webkit-align-items:center;
+      box-align:center;
+      -moz-box-align:center;
+      -webkit-box-align:center;
+      height: 6.2rem;
+      background: #fff;
+    }
+    .item img{
+      width: 4.2rem;
+      margin-right: .84rem;
+      vertical-align: middle;
+    }
+    .item-box{
+      width: 100%;
+      font-size: 1.4rem;
+      display: inline-block;
+    }
+    .item-box p{
+      width: 100%;
+      margin-bottom: .5rem;
+    }
+    .item-box>span{
+      color: #1ABC9C;
+      font-size: 1.2rem;
+    }
+    .item-box em{
+      font-style: normal;
+      float: right;
+      font-size: 1.2rem;
+      color: #999;
+    }
+
+
+}

@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>退款</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="mybg">
+  <ion-list>
+    <ion-item>
+      <ion-label>退款金额</ion-label>
+      <ion-input class="myinput" value="￥{{list.money}}" readonly="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="myitem">退款理由</ion-label>
+      <ion-textarea readonly="true" value="{{list.reason}}"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>退款状态</ion-label>
+      <ion-input class="myinput" readonly="true" value="{{status}}"></ion-input>
+    </ion-item>
+    <ion-item class="des-item">
+      <ion-label>
+        附件
+      </ion-label>
+    </ion-item>
+    <ion-item class="input-item">
+      <ion-label>
+        <img class="img-con" src=" "/>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <!--处理中或退款中时显示撤回退款-->
+  <button ion-button block class="applyBtn" *ngIf="list.status=='1' || list.status=='2'">撤回退款</button>
+  <!--退款成功或驳回时显示修改退款-->
+  <button ion-button block class="applyBtn" *ngIf="list.status=='4' || list.status=='5'">修改退款</button>
+</ion-content>

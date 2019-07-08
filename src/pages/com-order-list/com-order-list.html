@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消费订单</ion-title>
+  </ion-navbar>
+
+  <div class="tab-menus">
+    <ul>
+      <li *ngFor="let menu of menus;let i = index" (click)="onTabsChange(i)" [ngClass]="{active:i===tabIndex}">
+        <p>{{menu}}</p>
+      </li>
+    </ul>
+  </div>
+
+</ion-header>
+
+
+<ion-content class="myCon">
+  <!--下拉刷新-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <order-list-all *ngIf="tabIndex==0" class="com" #ref></order-list-all>
+  <order-list-finished *ngIf="tabIndex==1" class="com" #ref></order-list-finished>
+  <order-list-refund *ngIf="tabIndex==2" class="com" #ref></order-list-refund>
+
+  <!--上拉加载更多-->
+  <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  <ion-infinite-scroll *ngIf="getMore" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

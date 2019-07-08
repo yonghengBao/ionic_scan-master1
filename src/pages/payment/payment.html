@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>付款给商家</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="qrCodeBox">
+    <img src="assets/imgs/qrcode.png">
+  </div>
+  <div class="way">
+    <button ion-item no-lines class="ticket"  (click)="navigate('ChooseCouponPage')">
+      <span class="icons"><img src="assets/icon/ticket.png"></span>
+      餐券
+      <span class="price">{{money}}</span>
+    </button>
+    <p class="wayT">选择支付方式</p>
+    <ion-list radio-group>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/balance.png"></span>余额</ion-label>
+        <ion-radio selected></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/wechat.png"></span>微信支付</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/alipay.png"></span>支付宝</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label><span class="icons"><img src="assets/icon/bankCard.png"></span>银行卡</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

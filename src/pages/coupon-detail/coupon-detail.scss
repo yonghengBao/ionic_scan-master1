@@ -1,0 +1,24 @@
+page-coupon-detail {
+  ion-content{background: #f9f9f9!important;}
+  //头部部分
+  .header-right{
+    font-size: 1.4rem;
+  }
+  .header-right .button-inner{
+    padding-right: .5rem;
+  }
+  .mIcon{
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-left: .3rem;
+  }
+  .card{width:90%;height:24.2rem;margin:3.5rem auto 0;background:#fff;border-radius:.8rem;}
+  .card-icon{width:4.2rem;height:4.2rem;background:url("../../assets/ticket.png");background-size:100% 100%;display:block;margin:0 auto;position: relative;top:-2.1rem;}
+  .ticket{text-align:center;color:#333;font-size:1.8rem;line-height:2.5rem;border-bottom:1px dashed #ccc;}
+  .ticket span{color:#A1A1A1;font-size:1.4rem;}
+  .ticket .date{text-align:left;margin-top:.5rem;}
+  .ticket .date p{font-size:1.4rem;}
+  .ticket .dec{color:#1ABC9C;font-size:1.2rem;text-align:left;}
+  .card>button{width:8.4rem;height: 3.4rem;background:#bdbdbd;color:#fff;border:none;border-radius:.2rem;margin:1.1rem auto;display:block;}
+  .card>button.okBtn{background:#1ABC9C;}
+}

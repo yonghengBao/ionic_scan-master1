@@ -1,0 +1,23 @@
+page-apply-detail {
+  ul{padding-left: 0;color: #999;font-size: 1.5rem;}
+  ul li{list-style: none;height: 5rem;line-height: 5rem;text-align: end;padding-right: 1rem;}
+  .applyDetailBox{position: relative;border: 1px solid #ddd;border-bottom: none;margin-top: 2rem;}
+  .applyDetailBox li{border-bottom: 1px solid #ddd;}
+  label{position: absolute;left: .5rem;line-height: 5rem;}
+  .state{
+    position: absolute;
+    right: -1rem;
+    top: -2rem;
+    border-radius: .5rem;
+    padding: .5rem .8rem;
+    font-size: 1.4rem;transform:rotate(25deg);
+    -ms-transform:rotate(25deg); /* Internet Explorer */
+    -moz-transform:rotate(25deg); /* Firefox */
+    -webkit-transform:rotate(25deg); /* Safari 和 Chrome */
+    -o-transform:rotate(25deg); /* Opera */
+  }
+  .pass{color: #1ABC9C;border: 1px solid #1ABC9C;}
+  .return{color: #FF0000;border: 1px solid #FF0000;}
+  .wait{color: #3399FF;border: 1px solid #3399FF;}
+
+}

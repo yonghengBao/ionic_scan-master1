@@ -1,0 +1,18 @@
+page-scan-result {
+  .sellerImg{width: 5rem;height: 5rem;margin: 0 auto;margin-top: 2.5rem;}
+  .sellerName{text-align: center;margin: 2.5rem 0 1.5rem 0;}
+  .moneyInput{position: relative;margin-bottom: 0!important;}
+  .moneyLabel{font-size: 1.6rem!important;}
+  .moneyIcon{display: block;width:3rem;height:3rem;position: absolute;left: 0;bottom: 1rem;font-size: 4rem;z-index: 999;line-height: 3rem;}
+  .payMoney{text-indent: 3rem;margin: 1rem 0;}
+  //.ticket{border-top: 1px solid #ddd!important;border-bottom: 1px solid #ddd!important;}
+  .price{float: right;vertical-align: middle;line-height: 2rem;}
+  .icons{display: inline-block;margin-right: .5rem;vertical-align: middle;}
+  .icons img{width: 2rem;height: 2rem;vertical-align: middle;}
+  .wayT{text-indent: .5rem;border-bottom: 1px solid #ddd;padding: 1.16rem;margin-bottom: 1px;font-size: 1.5rem;}
+  .label{font-size: 1.5rem;line-height: 1.5rem;vertical-align: middle;}
+  .footerBox{padding: 0 1.33rem;background: #fff;}
+  .bottomBox{height: 4.4rem;position: relative;bottom: 0;}
+  .totalMoney{line-height: 4.4rem;font-size: 2rem;width: 48%;position: absolute;left: 0;}
+  .payBtn{width: 48%;position: absolute;right: 0;}
+}

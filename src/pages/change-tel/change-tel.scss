@@ -1,0 +1,14 @@
+page-change-tel {
+  .question{overflow: hidden;}
+  .note{text-align: center;margin: 6rem 0 4rem 0;}
+  .choice button{width: 5rem;margin: 0 4rem;}
+  .yes{float: left;}
+  .no{float: right;}
+  .resend{position: absolute;right: 0;top: 10rem;}
+  .label{width: 2rem;font-size: 1.2rem;}
+  .codeLabel{width: 5rem!important;}
+  .text-input::-moz-placeholder{font-size: 1.2rem;}
+  .text-input:-ms-input-placeholder{font-size: 1.2rem;}
+  .text-input::-webkit-input-placeholder{font-size: 1.2rem;}
+  .btn{margin-top: 4rem;}
+}

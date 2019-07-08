@@ -1,0 +1,54 @@
+<!--
+  Generated template for the MyWalletPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的钱包</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="wall-page" padding>
+  <div class="wallet-con">
+    <div class="wallet-header">
+      <span class="font-color">我的余额(元)</span>
+      <button ion-button clear class="tradelBtn" (click)="navigate('ComTradeDetailPage')">交易明细</button>
+    </div>
+    <h4 class="myMoney">{{totalAccount}}</h4>
+    <div class="wallet-footer">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>{{salaryAccount}}</p>
+            <span>工资余额</span>
+          </ion-col>
+          <ion-col>
+            <p>{{balanceAccount}}</p>
+            <span>充值余额</span>
+          </ion-col>
+          <ion-col>
+            <p>{{rechargeAccount}}</p>
+            <span>赠送余额</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <ion-list class="wallet-list">
+    <button ion-item (click)="navigate('RechargePage')">
+      <ion-icon name="copy" color="orange"></ion-icon>
+      <span class="item-txt">充值</span>
+    </button>
+    <button ion-item (click)="navigate('CashPage')">
+      <ion-icon name="copy" color="orange"></ion-icon>
+      <span class="item-txt">提现</span>
+    </button>
+  </ion-list>
+
+
+</ion-content>

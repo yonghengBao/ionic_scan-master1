@@ -1,0 +1,13 @@
+<div class="coupon-content">
+  <div class="item" *ngFor="let item of pastTicketList;" (click)="toTicketDetail(item.ticketItemId,item.memberTicketDetailId)">
+    <img src="assets/mainpage/couponlogo.png" alt="">
+    <div class="item-box">
+      <p>
+        <span class="title">{{item.ticketName}}-{{item.timeName}}</span>
+        <em>{{item.startTime}}</em>
+      </p>
+      <span>{{item.useRange=="1" ? "指定商家可用" : item.useRange== "2" ? "仅使用餐饮" : "通用券"}}</span>
+    </div>
+  </div>
+  <no-data *ngIf="noData"></no-data>
+</div>

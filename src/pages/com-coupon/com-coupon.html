@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的餐券</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="toApply()" class="header-right" color="primary">
+        用餐申请
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <!--tab菜单-->
+  <div class="tab-menus">
+    <ul>
+      <li *ngFor="let menu of menus;let i = index" [ngClass]="{active:i===tabIndex}">
+        <p (tap)="onTabsChange(i)">{{menu}}</p>
+      </li>
+    </ul>
+  </div>
+</ion-header>
+
+<ion-content class="myCon">
+  <!--下拉刷新-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--未使用-->
+  <un-coupon *ngIf="status==1" class="com" #ref></un-coupon>
+  <!--已使用-->
+  <had-coupon *ngIf="status==2" class="com" #ref></had-coupon>
+  <!--已过期-->
+  <past-coupon *ngIf="status==3" class="com" #ref></past-coupon>
+
+  <!--上拉加载更多-->
+  <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+  <ion-infinite-scroll *ngIf="getMore" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content  loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+

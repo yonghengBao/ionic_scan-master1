@@ -1,0 +1,31 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>支付结果</ion-title>
+    <button ion-button clear class="finishBtn" (click)="goHome()">完成</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="con">
+      <span class="picBox">
+         <ion-icon name="contact" class="userImg" color="primary"></ion-icon>
+       </span>
+      <p class="time"> {{this.base.DateFormatter(resultForm.time)}} </p>
+      <p class="type">{{resultForm.type}}  {{resultForm.money}}元</p>
+      <p>付款方：{{resultForm.payer}}</p>
+      <p>收款方：{{resultForm.payee}}</p>
+      <div *ngIf="resultForm.status==1">
+        <ion-icon name="checkmark-circle" color="primary" class="state"></ion-icon>
+        <p>付款成功</p>
+        <p class="dec">祝您用餐愉快!</p>
+        <button ion-button>查看订单</button>
+      </div>
+      <div *ngIf="resultForm.status==2">
+        <ion-icon name="close-circle" color="danger" class="state"></ion-icon>
+        <p>付款失败</p>
+        <p class="dec">付款过程中出现了问题，请重试</p>
+        <button ion-button>重试</button>
+      </div>
+  </div>
+</ion-content>

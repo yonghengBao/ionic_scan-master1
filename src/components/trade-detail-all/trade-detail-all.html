@@ -1,0 +1,17 @@
+<div class="detailbg">
+  <ul class="detail-con" *ngFor="let item of allList">
+    <li>
+      <ion-grid>
+        <ion-row>
+          <ion-col>{{item.detail}}</ion-col>
+          <ion-col class="right">{{item.createDate}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>余额：{{item.totalAmount}}</ion-col>
+          <ion-col class="change right">{{item.type=="1"?"+":"-"}}{{item.amount}}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </li>
+  </ul>
+  <no-data *ngIf="noData"></no-data>
+</div>

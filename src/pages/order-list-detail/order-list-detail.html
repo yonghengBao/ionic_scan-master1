@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>订单详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="mybg">
+  <div class="header">
+    <div class="sller">
+      <!--<span class="img-con">-->
+        <!--<img class="myimg" src="assets/imgs/qrcode.png" alt=""/>-->
+      <!--</span>-->
+      <span class="name">{{detail.name}}</span>
+    </div>
+      <p class="realPay">{{detail.realPay}}</p>
+      <p class="status">{{status}}</p>
+  </div>
+  <ion-grid class="mygrid">
+    <ion-row>
+      <ion-col class="mytitle">
+        <p>订单金额</p>
+        <p>餐券</p>
+      </ion-col>
+      <ion-col  class="myvalue">
+        <p>{{detail.shouldPay}}</p>
+        <p>-{{detail.ticket}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="mytitle">
+        <p>付款方式</p>
+        <p>付款说明</p>
+      </ion-col>
+      <ion-col class="myvalue">
+        <p>{{detail.payMethod==1?"餐券":detail.payMethod==2?"支付宝":"微信"}}</p>
+        <p>{{detail.explain}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="mytitle">
+        <p>付款时间</p>
+        <p>订单号</p>
+      </ion-col>
+      <ion-col class="myvalue">
+        <p>{{detail.time}}</p>
+        <p>{{detail.id}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <!--交易成功时跳转申请退款页面-->
+    <button ion-item class="btn" *ngIf="detail.status=='10'" (click)="navigate('ApplyRefundPage',detail.id)">
+      <p>投诉性退款</p>
+    </button>
+    <!--退款中、退款成功、退款失败跳转到退款页面-->
+    <button ion-item class="btn" *ngIf="detail.status=='6' || detail.status=='7' || detail.status=='8' || detail.status=='9'" (click)="navigate('RefundPage',detail.id)">
+      <p>投诉性退款</p>
+      <span class="red">{{status}}</span>
+    </button>
+  </ion-list>
+  <p class="des">
+    *投诉性退款是指商家服务质量或商品质量存在问题，退款人需详细描述退款理由，平台工作人员会到现场核实。
+    若事件属实则可退款；若不属实，平台将拒绝退款申请。
+  </p>
+</ion-content>

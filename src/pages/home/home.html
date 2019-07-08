@@ -1,0 +1,116 @@
+<ion-menu [content]="content"  type="overlay" >
+  <ion-header >
+    <ion-toolbar>
+      <!--用户头像-->
+      <div class="user">
+        <img [src]="userUrl" (click)="avatarChoice()">
+        <p>{{userName}}</p>
+      </div>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines >
+      <button menuClose ion-item *ngFor="let p of page;let itemIndex=index" class="ion-mItem" (click)="navigate(p.component)">
+        <ion-icon name='{{p.ionicname}}' class="ion-mIcon" ></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+    <!--用餐说明-->
+    <div class="eat-descripte">
+      <ul>
+        <h3>用餐时间</h3>
+        <li *ngFor="let p of timeList;">{{p.name}}({{ p.start }}-{{p.end}})</li>
+      </ul>
+    </div>
+    <!--退出登录-->
+    <div class="quit" >
+      <div class="more-setting">
+        <ion-icon name="settings" class="ion-color"></ion-icon>
+        <span menuClose (click)="navigate('SetUpPage')">更多设置</span>
+      </div>
+      <div class="logout">
+        <ion-icon name="log-out" class="ion-color"></ion-icon>
+        <span menuClose (click)="navigate('LoginPage')">退出登录</span>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-menu>
+<ion-header>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="contact" ></ion-icon>
+    </button>
+    <ion-title>万千校园</ion-title>
+  </ion-toolbar>
+  <!--菜单栏-->
+  <div class="tab-menus">
+    <ul>
+      <li (click)="navigate('ScanPage')">
+        <img src="assets/mainpage/scan-in.png" style="width:2.5rem">
+        <p style="position: relative;top: .4rem;">扫一扫</p>
+      </li>
+      <li (click)="navigate('PaymentPage')">
+        <img src="assets/mainpage/paycode.png">
+        <p>付款</p>
+      </li>
+      <!--<li (click)="navigate('CouponPage')">-->
+      <li (click)="navigate('ComCouponPage')">
+        <img src="assets/mainpage/coupon.png">
+        <p>餐券</p>
+      </li>
+      <li (click)="navigate('RechargePage')">
+        <img src="assets/mainpage/recharge.png">
+        <p>充值</p>
+      </li>
+    </ul>
+  </div>
+</ion-header>
+<ion-content #content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="释放立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!--最新动态-->
+  <div class="new-status">
+    <p>
+      <i></i>
+      <span>最新动态</span>
+    </p>
+    <ul>
+      <li *ngFor="let item of newStatusList">
+        <p>
+          {{item.content}}
+          <span class="createTime">
+            {{this.base.FormatMsgTime(item.createdTime)}}
+            <!--{{item.createdTime}}-->
+          </span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <!--用餐历史-->
+  <div class="new-status">
+    <p>
+      <i></i>
+      <span>用餐历史</span>
+    </p>
+    <ul>
+      <li *ngFor="let item of mealHistoryList">
+        <span>{{this.base.DateFormatter(item.createdTime)}}</span>
+        <p class="detail">
+          {{item.content}}
+        </p>
+      </li>
+      <p class="finish" *ngIf="finishShow">已经到底啦！</p>
+    </ul>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="infiniteShow">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

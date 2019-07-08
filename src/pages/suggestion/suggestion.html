@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>意见反馈</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list class="sug-con">
+    <ion-item>
+      <ion-textarea type="text" placeholder="请输入您的意见" max="100" [(ngModel)]="wordval" (input)="word()"></ion-textarea>
+    </ion-item>
+    <span class="sugNum">{{sugNum}}/100</span>
+  </ion-list>
+  <button ion-button full class="sugBtn" (click)="sugBtn()">提交</button>
+
+</ion-content>

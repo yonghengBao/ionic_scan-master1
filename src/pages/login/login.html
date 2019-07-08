@@ -1,0 +1,28 @@
+<ion-content padding>
+  <div class="my-con">
+    <ion-icon name="contact" color="primary" class="personIcon"></ion-icon>
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="phone-portrait" color="gray"></ion-icon>
+      </ion-label>
+      <ion-input type="tel" [(ngModel)]="userParams.mobile" (ionBlur)="telBlue()"  placeholder="手机号码"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="lock" color="gray"></ion-icon>
+      </ion-label>
+      <ion-input id="goHome" type="{{pwShow?'text':'password'}}" [(ngModel)]="userParams.pwd" placeholder="登录密码" clearInput (ionFocus)="focusInput()"></ion-input>
+      <ion-icon name="{{pwShow?'eye':'eye-off'}}" item-end (tap)="pwShow=!pwShow" color="{{pwShow?'primary':'gray'}}"></ion-icon>
+    </ion-item>
+    <div>11</div>
+    <ion-item no-lines>
+      <a item-end class="mySize" (click)="forgetLoginPsw()">忘记密码</a>
+    </ion-item>
+  </ion-list>
+  <button ion-button color="primary" block round (click)="login()">登录1</button>
+  <button ion-button color="primary" block round (click)="home1()">热更新了</button>
+  <p class="my-p">没有账号？<a (click)="goRegister()">立即注册</a></p>
+
+</ion-content>
